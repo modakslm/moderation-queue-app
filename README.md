@@ -6,6 +6,15 @@ Live Demo: [https://moderation-queue-app.vercel.app](https://moderation-queue-ap
 
 ---
 
+### Authentication
+
+A basic login system is implemented to simulate moderator access.
+
+- Users must **enter a username** to log in.
+- The username is stored in `localStorage` to persist sessions.
+- Once logged in, users can access the moderation queue.
+- No logout or backend authentication is used — it's a mock flow as per assignment requirements.
+
 ## Features
 
 - List of reported posts with clear details (title, user, reason, time)
