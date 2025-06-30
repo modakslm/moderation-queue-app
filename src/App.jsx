@@ -1,15 +1,16 @@
-import PostList from "./features/posts/PostList";
-
+import { useState, useEffect } from 'react';
+import PostList from './features/posts/PostList';
+import Login from './features/auth/Login';
 
 function App() {
-  
+  const [user, setUser] = useState(null);
 
+  useEffect(() => {
+    const savedUser = localStorage.getItem('moderatorUser');
+    if (savedUser) setUser(savedUser);
+  }, []);
 
-  return (
-    <div className="bg-gray-50 min-h-screen">
-        <PostList />
-    </div>
-  );
+  return user ? <PostList /> : <Login onLogin={setUser} />;
 }
 
 export default App;
